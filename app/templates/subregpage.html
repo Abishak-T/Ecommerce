@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Products Adding</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="">Category :</label>
+        <select name="category" >
+            {% for i in cat_value %}
+           <option value="{{i}}">{{i}}</option>
+           {%endfor%}
+        </select> <br><br>
+        
+        <label for="">imgg :</label>
+        <input type="file" name="imgg"> <br> <br>
+        <label for="">prodname :</label>
+        <input type="text" name="prodname"> <br> <br>
+        <label for="">prodprice :</label>
+        <input type="text" name="prodprice"> <br> <br>
+        <label for="">Description :</label>
+        <textarea name="desc" ></textarea><br><br>
+        <label for="">img1 :</label>
+        <input type="file" name="imgone"><br><br>
+        <label for="">img2 :</label>
+        <input type="file" name="imgtwo"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #log{
+        width: 35%;
+        height: 320px;
+        background-image: linear-gradient(to right, rgb(230, 208, 208) , rgb(187, 118, 118));
+        border-radius: 20px;
+        margin: 150px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      #logbtn:hover{
+        color: white  !important;
+        background-color: rgb(184, 137, 137)!important;
+      }
+    </style>
+</head>
+<body style="background-image: linear-gradient(to right,rgb(187, 118, 118) ,rgb(230, 208, 208) , rgb(187, 118, 118));">
+    <center><div class="container ">
+        <div class="row">
+            <div class="card " id="log">
+                <center><h2 style="padding-top: 10px;"><b>LOGIN</b></h2></center>
+            <form action="" style="margin-top: 40px;" method="post">
+                {% csrf_token %}
+                 <center><label for=""><b>Email </b></label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="logemail" placeholder="&nbsp;Enter email" style="border: none; border-bottom: 1px solid maroon; border-radius: 4px; height: 23px; width: 45%;"></center> <br> <br>
+                    <center><label for=""><b>Password </b></label>
+                        &nbsp;<input type="password" name="logpass" placeholder="&nbsp;Enter password" style="border: none; border-bottom: 1px solid maroon; border-radius: 4px; height: 23px; width: 45%;"></center> <br>
+                    <span style="margin-right: 180px;"><input type="checkbox"><b>&nbsp;Remember me</b></span> <br> <br>
+                    <button type="submit" id="logbtn" style="width: 150px; height: 32px; border-radius: 8px; background-color: rgb(153, 82, 82); color: white; border:none;"><b>Log In</b></button> <br><br>
+
+                    <p>New user? <span><a href="{% url 'signup' %}" style="text-decoration: none; color:brown;"><b>Sign Up</b></a></span></p>
+
+                </form>
+            </div>
+        </div>
+    </div></center>
+    
+</body>
+</html>
